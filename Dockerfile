@@ -7,7 +7,7 @@ COPY /client/package.json /client/package-lock.json ./
 COPY . /app
 RUN npm install
 # RUN npm run build
-EXPOSE 3000
+
 
 # Build step #2: build the API with the client as static files
 FROM python:3.9
@@ -21,4 +21,5 @@ ENV env production
 
 
 # WORKDIR /app/api
+EXPOSE 3000
 CMD ["gunicorn", "-b", ":3000", "server:app"]
