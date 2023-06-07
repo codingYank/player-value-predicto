@@ -1,11 +1,11 @@
 FROM node:16-alpine as build-step
 WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
-COPY package.json yarn.lock ./
+COPY package.json package-lock.json ./
 COPY ./src ./src
 COPY ./public ./public
-RUN yarn install
-RUN yarn build
+RUN npm install
+RUN npm run build
 
 # Build step #2: build the API with the client as static files
 FROM python:3.9
