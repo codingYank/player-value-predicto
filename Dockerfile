@@ -1,7 +1,7 @@
 FROM node:18 as build-step
 WORKDIR /app
 # ENV PATH /client/node_modules/.bin:$PATH
-COPY package.json package-lock.json ./
+COPY ./client/package.json ./client/package-lock.json ./
 # COPY ./src ./src
 # COPY ./public ./public
 COPY . /app
@@ -11,10 +11,7 @@ EXPOSE 3000
 
 # Build step #2: build the API with the client as static files
 FROM python:3.9
-run mkdir /app
 WORKDIR /app
-ADD requirements.txt /app
-ADD server.py /app
 # COPY --from=build-step /app/build ./build
 COPY . /app
 # RUN mkdir ./api
