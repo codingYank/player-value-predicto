@@ -1,7 +1,7 @@
 FROM node:18 as build-step
 WORKDIR /app
 # ENV PATH /client/node_modules/.bin:$PATH
-COPY package.json ./
+COPY package.json package-lock.json ./
 # COPY ./src ./src
 # COPY ./public ./public
 COPY . /app
