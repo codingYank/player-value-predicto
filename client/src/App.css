@@ -1,0 +1,158 @@
+.app {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('./assets/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.home {
+  height: 100vh;
+  width: 100vw;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 15px;
+  background-color: hsla(0, 0%, 0%, 50%);
+  color: white;
+  padding: 10px;
+  width: fit-content;
+}
+
+.header {
+  text-align: center;
+}
+
+.input-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+
+}
+
+.input-form button {
+  width: 100px;
+  padding: .4rem .8rem .4rem .8rem;
+  border-radius: 15px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.input-form-item {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-bottom: 10px;
+}
+
+.input-form-item label, .input-form-item input, .input-form-item select {
+  font-size: 16px;
+ 
+}
+
+.input-form-item select, .input-form-item input {
+  border-radius: 15px;
+  border: none;
+  outline: none;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+
+}
+
+.input-form-item label {
+  font-weight: bold;
+}
+
+.error-msg {
+  color: red;
+}
+
+.prediction {
+  color: white;
+  height: 100vh;
+  width: 100vw;
+  overflow-y: auto;
+  
+}
+
+.prediction-header {
+  text-align: center;
+  border-bottom: 1px solid hsla(0, 0%, 0%, 50%);
+  background-color: hsla(0, 0%, 0%, 50%);
+  font-size: 30px;
+}
+
+.data-header {
+  margin-top: 60px;
+  text-align: center;
+  text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black; 
+  font-size: 25px;
+}
+
+
+
+
+
+.data-visual-item-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.data-visual-item {
+  border: 1px solid hsla(0, 0%, 0%, 50%);
+  width: 500px;
+  margin: 20px;
+  padding: 10px;
+  text-align: center;
+  background-color: hsla(0, 0%, 0%, 50%);
+  border-radius: 15px;
+}
+
+.data-visual-item img {
+   width: 450px;
+   border-radius: 15px;
+}
+
+@media (max-width: 500px) {
+  .data-visual-item img  {
+    width: 95%;
+  }
+
+  .prediction-header {
+    font-size: 18px;
+  }
+
+  .data-header {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 350px) {
+  .input-form{
+    width: 95vw;
+  }
+
+  .input-form-item {
+    width: 100%;
+  }
+}
