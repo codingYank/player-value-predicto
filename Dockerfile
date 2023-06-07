@@ -11,7 +11,10 @@ EXPOSE 3000
 
 # Build step #2: build the API with the client as static files
 FROM python:3.9
+run mkdir /app
 WORKDIR /app
+ADD requirements.txt /app
+ADD server.py /app
 # COPY --from=build-step /app/build ./build
 COPY . /app
 # RUN mkdir ./api
