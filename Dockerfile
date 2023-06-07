@@ -13,8 +13,8 @@ WORKDIR /app
 COPY --from=build-step /app/build ./build
 
 RUN mkdir ./api
-COPY api/requirements.txt api/api.py api/.flaskenv ./api/
-RUN pip install -r ./api/requirements.txt
+COPY flask-server/requirements.txt flask-server/server.py flask-server/.env ./flask-server/
+RUN pip install -r ./flask-server/requirements.txt
 ENV env production
 
 EXPOSE 3000
