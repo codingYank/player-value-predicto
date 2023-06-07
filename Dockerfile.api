@@ -1,0 +1,10 @@
+FROM python:3
+
+WORKDIR /app
+
+COPY flask-server/requirements.txt flask-server/server.py flask-server/.env ./
+RUN pip install -r ./requirements.txt
+ENV env production
+
+EXPOSE 5000
+CMD ["gunicorn", "-b", ":5000", "server:app"]
