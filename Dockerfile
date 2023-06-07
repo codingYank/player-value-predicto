@@ -19,4 +19,4 @@ ENV env production
 
 EXPOSE 3000
 WORKDIR /app/api
-CMD ["gunicorn", "-b", ":3000", "api:app"]
+CMD ["gunicorn", "-b", ":3000", "server:app"]
