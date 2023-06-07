@@ -1,4 +1,4 @@
-FROM node:16-alpine as build-step
+FROM node:18 as build-step
 WORKDIR /app
 # ENV PATH /client/node_modules/.bin:$PATH
 # COPY package.json package-lock.json ./
