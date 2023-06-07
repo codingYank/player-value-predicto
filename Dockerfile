@@ -12,7 +12,7 @@ EXPOSE 3000
 # Build step #2: build the API with the client as static files
 FROM python:3.9
 WORKDIR /app
-COPY --from=build-step /app/build ./build
+# COPY --from=build-step /app/build ./build
 COPY . /app
 # RUN mkdir ./api
 COPY flask-server/requirements.txt flask-server/server.py flask-server/.env ./flask-server/
