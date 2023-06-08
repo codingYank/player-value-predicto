@@ -22,4 +22,4 @@ ENV env production
 
 EXPOSE 5000
 # WORKDIR /app/api
-CMD ["gunicorn", "-b", "-5000", "flask-server:app"]
+CMD ["gunicorn", "-b", ":5000", "flask-server:app"]
