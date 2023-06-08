@@ -12,11 +12,12 @@
 # Build step #2: build the API with the client as static files
 FROM python:3.9
 WORKDIR /flask-server
+COPY . /flask-server
 # COPY --from=build-step /app/build ./build
 # COPY ./flask/server /app
 # RUN mkdir ./api
-COPY flask-server/requirements.txt flask-server/requirements.txt
-RUN pip install -r ./flask-server/requirements.txt
+# COPY flask-server/requirements.txt flask-server/requirements.txt
+RUN pip install -r requirements.txt
 # ENV env production
 
 COPY . .
