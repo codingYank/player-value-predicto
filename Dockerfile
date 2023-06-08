@@ -6,7 +6,7 @@ COPY /client/package.json /client/package-lock.json ./
 # COPY ./public ./public
 COPY . /app
 RUN npm install
-# RUN npm run build
+RUN npm start
 
 
 # Build step #2: build the API with the client as static files
