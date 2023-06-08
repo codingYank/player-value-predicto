@@ -30,10 +30,10 @@ def predict():
 
   return(prediction_data)
 
-@app.route('/')
-@cross_origin()
-def serve():
-  return send_from_directory(app.static_folder, 'index.html')
+# @app.route('/')
+# @cross_origin()
+# def serve():
+#   return send_from_directory(app.static_folder, 'index.html')
 
 if __name__=='__main__':
-  app.run(debug=True, port='5000')
+  app.run(debug=True, port='8080')
