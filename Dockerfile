@@ -24,5 +24,6 @@ COPY . .
 
 EXPOSE 8080
 # WORKDIR /app/api
-CMD["flask", "run", "--host=0.0.0.0"]
+CMD ["flask", "run", "--host=0.0.0.0"]
+# CMD["flask", "run", "--host=0.0.0.0"]
 # CMD ["gunicorn", "-b", "0.0.0.0:8080", "server:app"]
