@@ -21,7 +21,7 @@ const App = () => {
           element={<Home setValue={setValue} setData={setData} />}
         />
         <Route
-          path="/predict"
+          path="predict"
           element={<Prediction value={value} data={data} />}
         />
       </Routes>

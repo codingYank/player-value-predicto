@@ -11,14 +11,18 @@ const Home = ({ setValue, setData }) => {
     console.log(e)
     setData(e)
     try {
-      const res = await axios.post("/predict", e)
+      const res = await axios.post(
+        "https://tylernschmidt.com/playerValuePredictor/predict",
+        e
+      )
       console.log(res)
+
       if (res.status === 200) {
         let val = res.data.value
         setValue(val.toFixed(2))
         console.log(res.data.value)
 
-        navigate("/predict")
+        navigate("predict")
       }
     } catch (error) {
       console.log(error)
