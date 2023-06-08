@@ -15,11 +15,13 @@ WORKDIR /flask-server
 # COPY --from=build-step /app/build ./build
 # COPY ./flask/server /app
 # RUN mkdir ./api
-COPY flask-server/requirements.txt flask-server/server.py flask-server/.env ./
+COPY flask-server/requirements.txt flask-server/requirements.txt
 RUN pip install -r ./requirements.txt
-ENV env production
+# ENV env production
+
+COPY . .
 
 
-EXPOSE 5000
+EXPOSE 8080
 # WORKDIR /app/api
-CMD ["gunicorn", "-b", ":5000", "server:app"]
+CMD ["gunicorn", "-b", "0.0.0.0:8080", "server:app"]
