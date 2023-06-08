@@ -4,7 +4,7 @@ WORKDIR /app
 # COPY ./src ./src
 # COPY ./public ./public
 COPY . /app
-COPY /client/package.json /client/package-lock.json ./
+COPY /client/package.json /client/package-lock.json /client/public/index.html ./
 RUN npm install
 RUN npm run build
 
