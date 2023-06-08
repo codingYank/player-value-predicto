@@ -20,6 +20,6 @@ RUN pip install -r ./requirements.txt
 ENV env production
 
 
-EXPOSE 5000
+EXPOSE 3000
 # WORKDIR /app/api
-CMD ["gunicorn", "-b", "-5000", "flask-server:app"]
+CMD ["gunicorn", "-b", "-3000", "flask-server:app"]
