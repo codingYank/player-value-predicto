@@ -1,12 +1,12 @@
-FROM node:18 as build-step
-WORKDIR /app
-# ENV PATH /client/node_modules/.bin:$PATH
-# COPY ./src ./src
-# COPY ./public ./public
-COPY . /app
-COPY /client/package.json /client/package-lock.json /client/public/index.html ./
-RUN npm install
-RUN npm run build
+# FROM node:18 as build-step
+# WORKDIR /app
+# # ENV PATH /client/node_modules/.bin:$PATH
+# # COPY ./src ./src
+# # COPY ./public ./public
+# COPY . /app
+# COPY /client/package.json /client/package-lock.json /client/public/index.html ./
+# RUN npm install
+# RUN npm run build
 
 
 # Build step #2: build the API with the client as static files
@@ -22,4 +22,4 @@ ENV env production
 
 # WORKDIR /app/api
 EXPOSE 3000
-CMD ["gunicorn", "-b", ":3000", "flask-server/server:app"]
+CMD ["gunicorn", "-b", "--host=0.0.0.0", "flask-server/server:app"]
