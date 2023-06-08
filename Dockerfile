@@ -20,7 +20,7 @@ COPY . /flask-server
 RUN pip install -r requirements.txt
 ENV env production
 
-# COPY . .
+COPY . .
 
 
 EXPOSE 8080
