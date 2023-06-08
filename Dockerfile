@@ -16,7 +16,7 @@ WORKDIR /flask-server
 # COPY ./flask/server /app
 # RUN mkdir ./api
 COPY flask-server/requirements.txt flask-server/server.py flask-server/.env ./
-RUN pip install -r ./api/requirements.txt
+RUN pip install -r ./flask-server/requirements.txt
 ENV env production
 
 
