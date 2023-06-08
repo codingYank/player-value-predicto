@@ -7,9 +7,6 @@ app = Flask(__name__, static_folder='../client/build', static_url_path='')
 CORS(app)
 model = joblib.load('Player-value-predictor.joblib')
 
-@app.route('/members')
-def members():
-  return{'members': ["member1", "member2", "member3"]}
 
 @app.route('/predict', methods=['POST'])
 @cross_origin()
