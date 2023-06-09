@@ -16,7 +16,7 @@ COPY . /flask-server
 # COPY --from=build-step /app/build ./build
 # COPY ./flask/server /app
 # RUN mkdir ./api
-COPY flask-server/requirements.txt flask-server/requirements.txt
+COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
 
