@@ -11,10 +11,7 @@ const Home = ({ setValue, setData }) => {
     console.log(e)
     setData(e)
     try {
-      const res = await axios.post(
-        "https://tylernschmidt.com/playerValuePredictor/predict",
-        e
-      )
+      const res = await axios.post("http://tylerschmidt.pythonanywhere.com/", e)
       console.log(res)
 
       if (res.status === 200) {
